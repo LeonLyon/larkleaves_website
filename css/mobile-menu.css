@@ -1,0 +1,4 @@
+/* Mobile menu button: visible on light header/page background */
+#ast-mobile-header .main-header-menu-toggle {
+	color: var(--ast-global-color-2);
+}
