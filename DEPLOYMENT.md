@@ -45,6 +45,11 @@
 > 注意：Cloudflare Pages 的 `_redirects` 文件**不支持域名级跳转**，因此仓库里没有放
 > `_redirects`。请按官方推荐方式在 Cloudflare 后台配置 **Bulk Redirects**。
 
+> 重要前提：**`www.larkleaves.com` 的 DNS 记录必须存在且为 Proxied（橙色云）**，否则
+> www 会直接 NXDOMAIN，Chrome/Firefox 报 `DNS_PROBE_FINISHED_NXDOMAIN`，Edge 可能因缓存
+> 暂时正常。记录被删后重新添加即可（Cloudflare DNS → Records → Add record）：
+> `Type: A`、`Name: www`、`IPv4: 192.0.2.1`、`Proxy status: Proxied`、`TTL: Auto`。
+
 ### 4.1 Bulk Redirects（官方推荐）
 
 1. Cloudflare Dashboard → 域名 `larkleaves.com` → **Rules** → **Bulk Redirects**。
